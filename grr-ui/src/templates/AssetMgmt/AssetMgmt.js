@@ -215,6 +215,11 @@ class AssetMgmt extends Component {
                         <a-camera></a-camera>
                     </a-entity>
 
+                    <a-entity progressive-controls="objects: a-box"></a-entity>
+                    {/* <!-- hover & drag-drop won't have any obvious effect without some additional event handlers or components. See the examples page for more --> */}
+                    <a-box hoverable grabbable stretchable draggable dropppable
+                    color="blue" position="0 0 -1"></a-box>
+
                 </a-scene>
 
             </div>;
