@@ -203,22 +203,27 @@ class AssetMgmt extends Component {
                 <a-scene>
                     <a-assets>
                         <img id="city" src={`/assets/images/${this.state.currentBackground}`}></img>
+                        <a-asset-item id="sculpt-obj" src="/assets/images3d/sculpt.obj"></a-asset-item>
+                        <a-asset-item id="sculpt-mtl" src="/assets/images3d/sculpt.mtl"></a-asset-item>
                         <canvas id="c" ref="c" width="320" height="240"></canvas>
                         <canvas id="c2" ref="c2" width="320" height="240"></canvas>
                         <video  id="self" ref="self" width="300" height="200" autoPlay></video>
                         <video  id="caller" ref="caller" width="300" height="200"></video>
                     </a-assets>
                     <a-sky id="image-360" radius="10" src={`/assets/images/${this.state.currentBackground}`}></a-sky>
-                    <a-video src="#c" width="5" height="2.5" position="-6 -4 -2" rotation="-5 65 0"></a-video>
-                    <a-video src="#c2" width="5" height="2.5" position="-5 -4 -6" rotation="-5 65 0"></a-video>
+                    <a-video src="#c" width="5" height="2.5" position="-6 1.5 -5" rotation="-5 65 0"></a-video>
+                    <a-video src="#c2" width="5" height="2.5" position="-5 2 -4" rotation="-5 65 0"></a-video>
                     <a-entity position="0 -5 0">
                         <a-camera></a-camera>
                     </a-entity>
 
-                    <a-entity progressive-controls="objects: a-box"></a-entity>
+                    <a-entity progressive-controls="objects: a-obj-model; a-box"></a-entity>
                     {/* <!-- hover & drag-drop won't have any obvious effect without some additional event handlers or components. See the examples page for more --> */}
+                    
+                    <a-obj-model src="#sculpt-obj" mtl="#sculpt-mtl" scale="0.02 0.02 0.02" position="0 1 -1"
+                    hoverable grabbable stretchable draggable dropppable></a-obj-model> 
                     <a-box hoverable grabbable stretchable draggable dropppable
-                    color="blue" position="0 0 -1"></a-box>
+                    color="blue" width="0.1" height="0.1" depth="0.1" position="0 1 -1"></a-box>
 
                 </a-scene>
 
