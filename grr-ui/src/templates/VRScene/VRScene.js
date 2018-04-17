@@ -38,6 +38,13 @@ class VRScene extends React.Component {
         this.vrInit();
     }
 
+    componentDidUpdate(prevProps, prevState) {
+        if (prevProps.assetImages.length !== this.props.assetImages.length) {
+            console.log("assetListUpdated");
+            this.run();
+        }
+    }
+
     vrInit() {
         let controllers = document.querySelectorAll('[hand-controls]');
         let els = Array.prototype.slice.call(controllers);
