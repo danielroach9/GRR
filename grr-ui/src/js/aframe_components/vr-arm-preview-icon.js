@@ -84,13 +84,13 @@ AFRAME.registerComponent('preview-icon', {
         this.el.addEventListener('hitstart', (e) => {
             console.log("HIT HAS HAPPENED");
             this.el.emit('down');
-            this.addPreviewObj();
+            //this.addPreviewObj();
         });
 
         this.el.addEventListener('hitend', (e) => {
             console.log("HIT END HAS HAPPENED");
             this.el.emit('up');
-            this.removePreviewObj();
+            //this.removePreviewObj();
         });
 
                 
